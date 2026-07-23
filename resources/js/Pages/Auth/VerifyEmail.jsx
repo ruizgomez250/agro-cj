@@ -11,7 +11,7 @@ export default function VerifyEmail({ status }) {
 
     const handleLogout = (e) => {
         e.preventDefault();
-        post('/logout');
+        post('logout');
     };
 
     return (

@@ -130,7 +130,7 @@ export default function AuthenticatedLayout({ header, children }) {
 
     const handleLogout = (e) => {
         e.preventDefault();
-        post('/logout');
+        post('logout');
     };
 
     const currentRoute = route().current();
