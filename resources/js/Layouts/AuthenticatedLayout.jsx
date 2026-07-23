@@ -123,6 +123,7 @@ function NavDropdown({ item, isActive, isAdmin }) {
 
 export default function AuthenticatedLayout({ header, children }) {
     const user = usePage().props.auth.user;
+    const logoutUrl = usePage().props.ziggy?.logoutUrl || route('logout');
     const isAdmin = user?.role === 'admin';
     const [mobileOpen, setMobileOpen] = useState(false);
     const [mobileSection, setMobileSection] = useState(null);
@@ -195,7 +196,7 @@ export default function AuthenticatedLayout({ header, children }) {
                                 <div className="border-t border-gray-100 my-1" />
                                 <button
                                     type="button"
-                                    onClick={() => router.post(route('logout'))}
+                                    onClick={() => router.post(logoutUrl)}
                                     className="w-full flex items-center gap-2 px-4 py-2 text-sm text-red-600 hover:bg-red-50 transition-colors"
                                 >
                                     <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -303,7 +304,7 @@ export default function AuthenticatedLayout({ header, children }) {
                                 </Link>
                                 <button
                                     type="button"
-                                    onClick={() => router.post(route('logout'))}
+                                    onClick={() => router.post(logoutUrl)}
                                     className="w-full flex items-center gap-2 px-3 py-2 rounded-md text-sm text-red-300 hover:bg-green-700/50 transition-colors"
                                 >
                                     <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">

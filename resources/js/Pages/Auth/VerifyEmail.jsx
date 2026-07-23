@@ -1,8 +1,9 @@
 import GuestLayout from '@/Layouts/GuestLayout';
-import { Head, Link, useForm } from '@inertiajs/react';
+import { Head, Link, useForm, usePage } from '@inertiajs/react';
 
 export default function VerifyEmail({ status }) {
     const { post, processing } = useForm({});
+    const logoutUrl = usePage().props.ziggy?.logoutUrl || route('logout');
 
     const submit = (e) => {
         e.preventDefault();
@@ -37,7 +38,7 @@ export default function VerifyEmail({ status }) {
                     <button type="submit" disabled={processing} style={{ padding: '0.7rem 1.5rem', border: 'none', borderRadius: '14px', background: 'linear-gradient(135deg, #065F46 0%, #059669 50%, #10B981 100%)', color: '#fff', fontSize: '0.85rem', fontWeight: 700, letterSpacing: '0.04em', textTransform: 'uppercase', cursor: processing ? 'not-allowed' : 'pointer', opacity: processing ? 0.7 : 1, boxShadow: '0 4px 24px rgba(6,95,70,0.45), inset 0 1px 0 rgba(255,255,255,0.15)', transition: 'all 0.3s ease' }}>
                         {processing ? 'Enviando...' : 'Reenviar correo'}
                     </button>
-                    <Link href={route('logout')} method="post" as="button" style={{ fontSize: '0.8rem', color: 'rgba(255,255,255,0.5)', textDecoration: 'none', background: 'none', border: 'none', cursor: 'pointer', fontFamily: "'Figtree', sans-serif" }}>
+                    <Link href={logoutUrl} method="post" as="button" style={{ fontSize: '0.8rem', color: 'rgba(255,255,255,0.5)', textDecoration: 'none', background: 'none', border: 'none', cursor: 'pointer', fontFamily: "'Figtree', sans-serif" }}>
                         Cerrar sesion
                     </Link>
                 </div>
