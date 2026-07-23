@@ -161,7 +161,7 @@ export default function GuestLayout({ children }) {
                 transform: 'translate(-50%, -50%)',
                 width: '450px',
                 height: '450px',
-                backgroundImage: 'url(/img/agrocj.png)',
+                backgroundImage: 'url(${import.meta.env.BASE_URL}/img/agrocj.png)',
                 backgroundRepeat: 'no-repeat',
                 backgroundPosition: 'center',
                 backgroundSize: 'contain',
