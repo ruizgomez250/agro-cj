@@ -1,0 +1,13 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.login-bg {
+    background: linear-gradient(135deg, #065f46 0%, #059669 50%, #10b981 100%);
+    position: relative;
+    overflow: hidden;
+}
+
+.nav-scrollbar::-webkit-scrollbar {
+    height: 0;
+}
