@@ -39,9 +39,6 @@ class HandleInertiaRequests extends Middleware
                     'role' => $request->user()->role,
                 ] : null,
             ],
-            'ziggy' => [
-                'logoutUrl' => route('logout'),
-            ],
         ];
     }
 }
