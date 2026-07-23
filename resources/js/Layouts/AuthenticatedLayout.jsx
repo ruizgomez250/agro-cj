@@ -1,6 +1,6 @@
 import ApplicationLogo from '@/Components/ApplicationLogo';
 import Dropdown from '@/Components/Dropdown';
-import { Link, usePage } from '@inertiajs/react';
+import { Link, usePage, router } from '@inertiajs/react';
 import { useState, useRef, useEffect } from 'react';
 
 const navItems = [
@@ -193,15 +193,16 @@ export default function AuthenticatedLayout({ header, children }) {
                                     Mi Perfil
                                 </a>
                                 <div className="border-t border-gray-100 my-1" />
-                                <form method="POST" action={route('logout')}>
-                                    <input type="hidden" name="_token" value={document.querySelector('meta[name="csrf-token"]')?.content || ''} />
-                                    <button type="submit" className="w-full flex items-center gap-2 px-4 py-2 text-sm text-red-600 hover:bg-red-50 transition-colors">
-                                        <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h4a3 3 0 013 3v1" />
-                                        </svg>
-                                        Cerrar Sesion
-                                    </button>
-                                </form>
+                                <button
+                                    type="button"
+                                    onClick={() => router.post(route('logout'))}
+                                    className="w-full flex items-center gap-2 px-4 py-2 text-sm text-red-600 hover:bg-red-50 transition-colors"
+                                >
+                                    <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h4a3 3 0 013 3v1" />
+                                    </svg>
+                                    Cerrar Sesion
+                                </button>
                             </div>
                         </div>
 
@@ -300,12 +301,16 @@ export default function AuthenticatedLayout({ header, children }) {
                                     </svg>
                                     Mi Perfil
                                 </Link>
-                                <Link href={route('logout')} method="post" as="button" className="w-full flex items-center gap-2 px-3 py-2 rounded-md text-sm text-red-300 hover:bg-green-700/50 transition-colors">
+                                <button
+                                    type="button"
+                                    onClick={() => router.post(route('logout'))}
+                                    className="w-full flex items-center gap-2 px-3 py-2 rounded-md text-sm text-red-300 hover:bg-green-700/50 transition-colors"
+                                >
                                     <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h4a3 3 0 013 3v1" />
                                     </svg>
                                     Cerrar Sesion
-                                </Link>
+                                </button>
                             </div>
                         </div>
                     </div>

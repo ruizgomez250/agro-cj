@@ -6,7 +6,7 @@
         <meta name="csrf-token" content="{{ csrf_token() }}">
 
         <title>{{ config('app.name', 'Agro-CJ') }}</title>
-        <link rel="icon" type="image/png" href="{{ asset('img/agrocj.png') }}">
+        <link rel="icon" type="image/png" href="/img/agrocj.png">
 
         <!-- Fonts -->
         <link rel="preconnect" href="https://fonts.bunny.net">
@@ -17,7 +17,7 @@
     </head>
     <body class="font-sans text-gray-900 antialiased">
         <div class="login-bg min-h-screen flex flex-col justify-center items-center px-4 relative">
-            <div style="position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:500px;height:500px;background:url('{{ asset('img/agrocj.png') }}') no-repeat center center;background-size:contain;opacity:0.08;pointer-events:none;"></div>
+            <div style="position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:500px;height:500px;background:url('/img/agrocj.png') no-repeat center center;background-size:contain;opacity:0.08;pointer-events:none;"></div>
             <div class="text-center mb-6 relative z-10">
                 <a href="/">
                     <div class="mx-auto h-24 w-24 rounded-full shadow-lg overflow-hidden bg-white/10 backdrop-blur-sm flex items-center justify-center p-2">
